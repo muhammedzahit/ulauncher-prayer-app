@@ -127,5 +127,3 @@ def get_praying_info(city_text, language):
             language_texts.get(LanguageDict.ISHA.value).get(language).format(h = yatsi_time.split(':')[0], m = yatsi_time.split(':')[1]), \
             next_pray_info                
             
-            
-print(get_praying_info("TÜRKİYE/SAMSUN/ÇARŞAMBA", "tr"))
