@@ -28,8 +28,8 @@ class KeywordQueryEventListener(EventListener):
             logger.info(fajr_time)
         
             items.append(ExtensionResultItem(icon=next_azan["icon"],
-                                                name=next_azan["text"],
-                                                description="Next Azan",
+                                                name="Next Azan",
+                                                description=next_azan["text"],
                                                 on_enter=HideWindowAction()))
             
             items.append(ExtensionResultItem(icon="./images/fajr.png",
