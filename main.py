@@ -21,7 +21,7 @@ class KeywordQueryEventListener(EventListener):
         items = []
         try:
             fajr_time, sunset_time, dhuhr_time, asr_time, maghrib_time, isha_time ,next_azan = \
-            get_praying_info("TÜRKİYE/SAMSUN/ÇARŞAMBA", "tr")
+            get_praying_info(location, language)
         
             items.append(ExtensionResultItem(icon=next_azan.icon,
                                                 name=next_azan.text,
