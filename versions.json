@@ -1,3 +1,4 @@
 [
-    {"required_api_version": "^2.0.0", "commit" : "main"}
+  {"required_api_version": "^2.0.0", "commit": "main"},
+  {"required_api_version": "3", "commit": "future_v3_api"}
 ]
