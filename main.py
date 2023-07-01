@@ -23,8 +23,8 @@ class KeywordQueryEventListener(EventListener):
             fajr_time, sunset_time, dhuhr_time, asr_time, maghrib_time, isha_time ,next_azan = \
             get_praying_info(location, language)
         
-            items.append(ExtensionResultItem(icon=next_azan.icon,
-                                                name=next_azan.text,
+            items.append(ExtensionResultItem(icon=next_azan["icon"],
+                                                name=next_azan["text"],
                                                 description="Next Azan",
                                                 on_enter=HideWindowAction()))
             

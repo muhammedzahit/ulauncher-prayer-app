@@ -98,26 +98,26 @@ def get_praying_info(city_text, language):
 
 
     if now < datetime.datetime.strptime(imsak_time, "%H:%M").time():
-        next_pray_info.text = next_pray_time(language_texts.get(LanguageDict.FAJR_TIME.value).get(language), imsak_interval)
-        next_pray_info.icon = "./images/fajr.png"
+        next_pray_info["text"] = next_pray_time(language_texts.get(LanguageDict.FAJR_TIME.value).get(language), imsak_interval)
+        next_pray_info["icon"] = "./images/fajr.png"
     elif now < datetime.datetime.strptime(gunes_time, "%H:%M").time():
-        next_pray_info.text = next_pray_time(language_texts.get(LanguageDict.SUNRISE_TIME.value).get(language), gunes_interval)
-        next_pray_info.icon = "./images/fajr.png"
+        next_pray_info["text"] = next_pray_time(language_texts.get(LanguageDict.SUNRISE_TIME.value).get(language), gunes_interval)
+        next_pray_info["icon"] = "./images/fajr.png"
     elif now < datetime.datetime.strptime(ogle_time, "%H:%M").time():
-        next_pray_info.text = next_pray_time(language_texts.get(LanguageDict.DHUHR_TIME.value).get(language), ogle_interval)
-        next_pray_info.icon = "./images/dhuhr.png"
+        next_pray_info["text"] = next_pray_time(language_texts.get(LanguageDict.DHUHR_TIME.value).get(language), ogle_interval)
+        next_pray_info["icon"] = "./images/dhuhr.png"
     elif now < datetime.datetime.strptime(ikindi_time, "%H:%M").time():
-        next_pray_info.text = next_pray_time(language_texts.get(LanguageDict.ASR_TIME.value).get(language), ikindi_interval)
-        next_pray_info.icon = "./images/asr.png"
+        next_pray_info["text"] = next_pray_time(language_texts.get(LanguageDict.ASR_TIME.value).get(language), ikindi_interval)
+        next_pray_info["icon"] = "./images/asr.png"
     elif now < datetime.datetime.strptime(aksam_time, "%H:%M").time():
-        next_pray_info.text = next_pray_time(language_texts.get(LanguageDict.MAGHRIB_TIME.value).get(language), aksam_interval)
-        next_pray_info.icon = "./images/maghrib.png"
+        next_pray_info["text"] = next_pray_time(language_texts.get(LanguageDict.MAGHRIB_TIME.value).get(language), aksam_interval)
+        next_pray_info["icon"] = "./images/maghrib.png"
     elif now < datetime.datetime.strptime(yatsi_time, "%H:%M").time():
-        next_pray_info.text = next_pray_time(language_texts.get(LanguageDict.ISHA_TIME.value).get(language), yatsi_interval)
-        next_pray_info.icon = "./images/isha.png"
+        next_pray_info["text"] = next_pray_time(language_texts.get(LanguageDict.ISHA_TIME.value).get(language), yatsi_interval)
+        next_pray_info["icon"] = "./images/isha.png"
     else:
-        next_pray_info.text = next_pray_time(language_texts.get(LanguageDict.FAJR_TIME.value).get(language), next_imsak_interval)
-        next_pray_info.icon = "./images/fajr.png"
+        next_pray_info["text"] = next_pray_time(language_texts.get(LanguageDict.FAJR_TIME.value).get(language), next_imsak_interval)
+        next_pray_info["icon"] = "./images/fajr.png"
 
     return language_texts.get(LanguageDict.FAJR.value).get(language).format(h = imsak_time.split(':')[0], m = imsak_time.split(':')[1]), \
             language_texts.get(LanguageDict.SUNRISE.value).get(language).format(h = gunes_time.split(':')[0], m = gunes_time.split(':')[1]),\
