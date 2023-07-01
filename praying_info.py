@@ -8,7 +8,8 @@ def get_city_id(city_text):
         with open("./cities/" + city_text + "/value.txt", "r") as f:
             text = f.readline();
             return text
-    except:
+    except Exception as e:
+        print("Exception at Reading File", str(e))
         return "-1"
 
 def get_praying_info(city_text, language):
