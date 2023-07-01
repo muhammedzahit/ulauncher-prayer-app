@@ -45,8 +45,8 @@ def get_praying_info(city_text, language):
     try:
         script_text = script_tag.text
     except:
-        print("s:", city_text, city_text==city_text.strip())
-        print("l:", language, language==language.strip())
+        print("s:", city_text.strip(), city_text==city_text.strip())
+        print("l:", language.strip(), language==language.strip())
     imsak_time = re.search(r'var _imsakTime = "(\d{2}:\d{2})";', script_text).group(1)
     gunes_time = re.search(r'var _gunesTime = "(\d{2}:\d{2})";', script_text).group(1)
     ogle_time = re.search(r'var _ogleTime = "(\d{2}:\d{2})";', script_text).group(1)
