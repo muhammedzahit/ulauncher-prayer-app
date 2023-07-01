@@ -1,7 +1,7 @@
 {
     "required_api_version": "^2.0.0",
-    "name": "Demo extension",
-    "description": "Extension Description",
+    "name": "Prayer Time",
+    "description": "Shows Azan Time According Your Locations",
     "developer_name": "Muhammet Zahit Aydın",
     "icon": "images/icon.png",
     "options": {
@@ -9,11 +9,25 @@
     },
     "preferences": [
       {
-        "id": "demo_kw",
+        "id": "kw",
         "type": "keyword",
-        "name": "Demo",
-        "description": "Demo extension",
-        "default_value": "dm"
+        "name": "Prayer Time",
+        "description": "Shows Azan Time According Your Locations",
+        "default_value": "prayer"
+      },
+      {
+        "id" : "location",
+        "type" : "text",
+        "name" : "Enter Your Location Text ID",
+        "description" : "Generally Country/City/Province or Country/City but if this not work find your Location ID on creating_city_folders.py"
+        ,"default_value" : "TÜRKİYE/SAMSUN/ÇARŞAMBA"
+      },
+      {
+        "id" : "language",
+        "type" : "text",
+        "name" : "Choose Language",
+        "description" : "Currently 2 avaliable languages. type 'tr' for Turkish, 'en' for English Language",
+        "default_value" : "tr"
       }
     ]
 }

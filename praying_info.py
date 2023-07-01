@@ -9,10 +9,12 @@ def get_city_id(city_text):
             text = f.readline();
             return text
     except:
-        print("File not found!!!")
+        return "-1"
 
 def get_praying_info(city_text, language):
     city_id = get_city_id(city_text)
+    if(city_id == -1) :
+        raise Exception("City Not Found")
     url = "https://namazvakitleri.diyanet.gov.tr/tr-TR/" + city_id # Replace with your desired URL
 
     # Send a GET request to the URL and get the HTML content
@@ -116,6 +118,7 @@ def get_praying_info(city_text, language):
     else:
         next_pray_info.text = next_pray_time(language_texts.get(LanguageDict.FAJR_TIME.value).get(language), next_imsak_interval)
         next_pray_info.icon = "./images/fajr.png"
+
     return language_texts.get(LanguageDict.FAJR.value).get(language).format(h = imsak_time.split(':')[0], m = imsak_time.split(':')[1]), \
             language_texts.get(LanguageDict.SUNRISE.value).get(language).format(h = gunes_time.split(':')[0], m = gunes_time.split(':')[1]),\
             language_texts.get(LanguageDict.DHUHR.value).get(language).format(h = ogle_time.split(':')[0], m = ogle_time.split(':')[1]), \
