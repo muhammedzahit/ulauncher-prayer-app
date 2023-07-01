@@ -5,11 +5,13 @@ from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 from praying_info import get_praying_info
+import logging  
 
 class DemoExtension(Extension):
 
-    def __init__(self):
+    def __init__(self, logger):
         super().__init__()
+        self.logger = logger
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
 
 
@@ -22,6 +24,8 @@ class KeywordQueryEventListener(EventListener):
         try:
             fajr_time, sunset_time, dhuhr_time, asr_time, maghrib_time, isha_time ,next_azan = \
             get_praying_info(location, language)
+
+            logger.info(fajr_time)
         
             items.append(ExtensionResultItem(icon=next_azan["icon"],
                                                 name=next_azan["text"],
@@ -67,4 +71,5 @@ class KeywordQueryEventListener(EventListener):
         return RenderResultListAction(items)
 
 if __name__ == '__main__':
-    DemoExtension().run()
+    logger = logging.getLogger(__name__)
+    DemoExtension(logger).run()
