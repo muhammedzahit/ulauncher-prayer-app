@@ -62,10 +62,10 @@ class KeywordQueryEventListener(EventListener):
                                                 description="",
                                                 on_enter=HideWindowAction()))
             
-        except:
+        except Exception as e:
             items.append(ExtensionResultItem(icon="./images/exclamation.jpeg",
                                                 name="City Text ID Not Found, Please check file creating_city_folders.py from github !",
-                                                description="",
+                                                description=str(e),
                                                 on_enter=HideWindowAction()))
 
         return RenderResultListAction(items)
