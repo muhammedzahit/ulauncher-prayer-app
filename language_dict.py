@@ -17,28 +17,28 @@ class LanguageDict(Enum):
 def get_language_dict():
     language_dict={
         "Fajr-Time" : {
-            "tr" : "İmsak vaktine {h} S, {m} D, {s} S kaldı.",
-            "en" : "{h} H, {m} M, {s} S left until the Fajr time.",
+            "tr" : "İmsak vaktine {h} saat, {m} dakika, {s} saniye kaldı.",
+            "en" : "{h} hours, {m} minutes, {s} seconds left until the Fajr time.",
         },
         "Sunrise-Time" : {
-            "tr" : "Güneşin Doğmasına {h} S, {m} D, {s} S kaldı.",
-            "en" : "{h} H, {m} M, {s} S left until Sunrise."
+            "tr" : "Güneşin Doğmasına {h} saat, {m} dakika, {s} saniye kaldı.",
+            "en" : "{h} hours, {m} minutes, {s} seconds left until Sunrise."
         },
         "Dhuhr-Time" : {
-            "tr": "Öğle Ezanına {h} S, {m} D, {s} S kaldı.",
-            "en": "{h} H, {m} M, {s} S left until the Dhuhr Azan."
+            "tr": "Öğle Ezanına {h} saat, {m} dakika, {s} saniye kaldı.",
+            "en": "{h} hours, {m} minutes, {s} seconds left until the Dhuhr Azan."
         },
         "Asr-Time" : {
-            "tr" : "İkindi Ezanına {h} S, {m} D, {s} S kaldı.",
-            "en": "{h} H, {m} M, {s} S left until the Asr Azan."
+            "tr" : "İkindi Ezanına {h} saat, {m} dakika, {s} saniye kaldı.",
+            "en": "{h} hours, {m} minutes, {s} seconds left until the Asr Azan."
         },
         "Maghrib-Time": {
-            "tr" : "Akşam Ezanına {h} S, {m} D, {s} S kaldı.",
-            "en": "{h} H, {m} M, {s} S left until the Maghrib Azan."
+            "tr" : "Akşam Ezanına {h} saat, {m} dakika, {s} saniye kaldı.",
+            "en": "{h} hours, {m} minutes, {s} seconds left until the Maghrib Azan."
         },
         "Isha-Time" : {
-            "tr" : "Yatsı Ezanına {h} S, {m} D, {s} S kaldı.",
-            "en": "{h} H, {m} M, {s} S left until the Isha Azan."
+            "tr" : "Yatsı Ezanına {h} saat, {m} dakika, {s} saniye kaldı.",
+            "en": "{h} hours, {m} minutes, {s} seconds left until the Isha Azan."
         },
         "Fajr" : {
             "tr" : "İmsak vakti : {h}:{m}",
