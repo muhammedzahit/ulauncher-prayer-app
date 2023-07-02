@@ -28,7 +28,7 @@ class KeywordQueryEventListener(EventListener):
             logger.info(fajr_time)
         
             items.append(ExtensionResultItem(icon=next_azan["icon"],
-                                                name="Next Azan",
+                                                name="Next Azan in " + location,
                                                 description=next_azan["text"],
                                                 on_enter=HideWindowAction()))
             
