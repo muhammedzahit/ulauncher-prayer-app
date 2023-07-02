@@ -2,10 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 import datetime
 from language_dict import get_language_dict, LanguageDict
+import os
 
-def get_city_id(city_text):
+def get_city_id(parent_path,city_text):
     try:
-        with open("./cities/" + city_text + "/value.txt", "r") as f:
+        with open(parent_path + "/cities/" + city_text + "/value.txt", "r") as f:
             text = f.readline();
             return text
     except Exception as e:
@@ -13,7 +14,12 @@ def get_city_id(city_text):
         return "-1"
 
 def get_praying_info(city_text, language):
-    city_id = get_city_id(city_text)
+    
+    current_file_path = os.path.abspath(__file__)
+    print("Current file Path", current_file_path)
+    parent_file_path = os.path.dirname(current_file_path)
+    print("Parent path", parent_file_path) 
+    city_id = get_city_id(parent_file_path, city_text)
     if(city_id == -1) :
         raise Exception("City Not Found")
     url = "https://namazvakitleri.diyanet.gov.tr/tr-TR/" + city_id # Replace with your desired URL
