@@ -17,28 +17,28 @@ class LanguageDict(Enum):
 def get_language_dict():
     language_dict={
         "Fajr-Time" : {
-            "tr" : "İmsak vaktine {h} saat, {m} dakika, {s} saniye kaldı.",
-            "en" : "{h} hours, {m} minutes, {s} seconds left until the Fajr time.",
+            "tr" : "İmsak vaktine {h} sa, {m} dk, {s} sn kaldı.",
+            "en" : "{h} h, {m} m, {s} sec left until the Fajr time.",
         },
         "Sunrise-Time" : {
-            "tr" : "Güneşin Doğmasına {h} saat, {m} dakika, {s} saniye kaldı.",
-            "en" : "{h} hours, {m} minutes, {s} seconds left until Sunrise."
+            "tr" : "Güneşin Doğmasına {h} sa, {m} dk, {s} sn kaldı.",
+            "en" : "{h} h, {m} m, {s} sec left until Sunrise."
         },
         "Dhuhr-Time" : {
-            "tr": "Öğle Ezanına {h} saat, {m} dakika, {s} saniye kaldı.",
-            "en": "{h} hours, {m} minutes, {s} seconds left until the Dhuhr Azan."
+            "tr": "Öğle Ezanına {h} sa, {m} dk, {s} sn kaldı.",
+            "en": "{h} h, {m} m, {s} sec left until the Dhuhr Azan."
         },
         "Asr-Time" : {
-            "tr" : "İkindi Ezanına {h} saat, {m} dakika, {s} saniye kaldı.",
-            "en": "{h} hours, {m} minutes, {s} seconds left until the Asr Azan."
+            "tr" : "İkindi Ezanına {h} sa, {m} dk, {s} sn kaldı.",
+            "en": "{h} h, {m} m, {s} sec left until the Asr Azan."
         },
         "Maghrib-Time": {
-            "tr" : "Akşam Ezanına {h} saat, {m} dakika, {s} saniye kaldı.",
-            "en": "{h} hours, {m} minutes, {s} seconds left until the Maghrib Azan."
+            "tr" : "Akşam Ezanına {h} sa, {m} dk, {s} sn kaldı.",
+            "en": "{h} h, {m} m, {s} sec left until the Maghrib Azan."
         },
         "Isha-Time" : {
-            "tr" : "Yatsı Ezanına {h} saat, {m} dakika, {s} saniye kaldı.",
-            "en": "{h} hours, {m} minutes, {s} seconds left until the Isha Azan."
+            "tr" : "Yatsı Ezanına {h} sa, {m} dk, {s} sn kaldı.",
+            "en": "{h} h, {m} m, {s} sec left until the Isha Azan."
         },
         "Fajr" : {
             "tr" : "İmsak vakti : {h}:{m}",
@@ -63,6 +63,10 @@ def get_language_dict():
         "Isha" : {
             "tr" : "Yatsı vakti : {h}:{m}",
             "en" : "Isha time : {h}:{m}",
+        },
+        "Location" : {
+            "en" : "Next Azan in {location}",
+            "tr" : "{location} için sonraki vakit"
         }
     }
     return language_dict

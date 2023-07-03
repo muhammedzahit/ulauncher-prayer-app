@@ -6,6 +6,7 @@ from ulauncher.api.shared.action.RenderResultListAction import RenderResultListA
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 from praying_info import get_praying_info
 import logging  
+import language_dict
 
 class DemoExtension(Extension):
 
@@ -28,8 +29,8 @@ class KeywordQueryEventListener(EventListener):
             logger.info(fajr_time)
         
             items.append(ExtensionResultItem(icon=next_azan["icon"],
-                                                name="Next Azan in " + location,
-                                                description=next_azan["text"],
+                                                name=next_azan["text"],
+                                                description=language_dict["Location"][language].format(location=location),
                                                 on_enter=HideWindowAction()))
             
             items.append(ExtensionResultItem(icon="./images/fajr.png",
