@@ -6,7 +6,7 @@ from ulauncher.api.shared.action.RenderResultListAction import RenderResultListA
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 from praying_info import get_praying_info
 import logging  
-import language_dict
+from language_dict import get_language_dict
 
 class DemoExtension(Extension):
 
@@ -27,6 +27,8 @@ class KeywordQueryEventListener(EventListener):
             get_praying_info(location, language)
 
             logger.info(fajr_time)
+
+            language_dict = get_language_dict()
         
             items.append(ExtensionResultItem(icon=next_azan["icon"],
                                                 name=next_azan["text"],
@@ -65,8 +67,8 @@ class KeywordQueryEventListener(EventListener):
             
         except Exception as e:
             items.append(ExtensionResultItem(icon="./images/exclamation.jpeg",
-                                                name="City Text ID Not Found, Please check file creating_city_folders.py from github !",
-                                                description=str(e),
+                                                name="City Text ID Not Found",
+                                                description="Please check file creating_city_folders.py from github !",
                                                 on_enter=HideWindowAction()))
 
         return RenderResultListAction(items)

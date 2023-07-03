@@ -6,6 +6,7 @@ import os
 
 def get_city_id(parent_path,city_text):
     try:
+        print(parent_path + "/cities/" + city_text + "/value.txt", "r")
         with open(parent_path + "/cities/" + city_text + "/value.txt", "r") as f:
             text = f.readline();
             return text
