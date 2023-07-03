@@ -6,6 +6,8 @@
 
 This extension allows you to get prayer times for your location. This extension uses Presendency of Religious Affairs of Turkey's website to get prayer times.
 
+Actually Presendency of Religious Affairs of Turkey's has official API for getting prayer times. But this API only allows 5 request per day. And requires authentication. So I decided to use their website to get prayer times with web scraping method.
+
 ## Demo
 
 ![demo](video.gif)
