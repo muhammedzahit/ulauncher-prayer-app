@@ -28,7 +28,7 @@
         "name" : "Your Location ID",
         "description" : "If you don't know your location ID , don't change this value !!! You can search your location ID in sorted_cities.txt file"
         ,"default_value" : "-1"
-      }
+      },
       {
         "id" : "language",
         "type" : "text",
