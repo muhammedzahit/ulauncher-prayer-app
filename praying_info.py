@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import datetime
 from language_dict import get_language_dict, LanguageDict
 import os
+from retrying import retry
 
 def get_city_id(parent_path,city_text):
     try:
@@ -14,19 +15,30 @@ def get_city_id(parent_path,city_text):
         print("Exception at Reading File", str(e))
         return "-1"
 
-def get_praying_info(city_text, language):
+@retry(wait_fixed=2500)
+def get_url(url):
+    response = requests.get(url)
+    return response
+
+def get_praying_info(city_text, language, city_id):
+
+    city_text = city_text.strip()
+    language = language.strip()
+
+    if(id != -1):  
+        current_file_path = os.path.abspath(__file__)
+        print("Current file Path", current_file_path)
+        parent_file_path = os.path.dirname(current_file_path)
+        print("Parent path", parent_file_path) 
+        city_id = get_city_id(parent_file_path, city_text)
+        if(city_id == -1) :
+            raise Exception("City Not Found")
     
-    current_file_path = os.path.abspath(__file__)
-    print("Current file Path", current_file_path)
-    parent_file_path = os.path.dirname(current_file_path)
-    print("Parent path", parent_file_path) 
-    city_id = get_city_id(parent_file_path, city_text)
-    if(city_id == -1) :
-        raise Exception("City Not Found")
+    
     url = "https://namazvakitleri.diyanet.gov.tr/tr-TR/" + city_id # Replace with your desired URL
 
     # Send a GET request to the URL and get the HTML content
-    response = requests.get(url)
+    response = get_url(url)
     html_content = response.content
 
     # Save the HTML content to a file
@@ -142,4 +154,4 @@ def get_praying_info(city_text, language):
     
             
             
-print(get_praying_info("TÜRKİYE/SAMSUN/ÇARŞAMBA", "tr"))
+print(get_praying_info("TÜRKİYE/SAMSUN/ÇARŞAMBA", "tr", -1))

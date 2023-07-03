@@ -19,9 +19,16 @@
         "id" : "location",
         "type" : "text",
         "name" : "Enter Your Location Text ID",
-        "description" : "Generally Country/City/Province or Country/City but if this not work find your Location ID on creating_city_folders.py"
+        "description" : "Generally Country/City/Province or Country/City but if this not work find your Location ID on sorted_cities.txt file"
         ,"default_value" : "TÜRKİYE/SAMSUN/ÇARŞAMBA"
       },
+      {
+        "id" : "location_id",
+        "type" : "text",
+        "name" : "Your Location ID",
+        "description" : "If you don't know your location ID , don't change this value !!! You can search your location ID in sorted_cities.txt file"
+        ,"default_value" : "-1"
+      }
       {
         "id" : "language",
         "type" : "text",

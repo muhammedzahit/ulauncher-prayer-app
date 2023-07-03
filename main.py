@@ -21,10 +21,11 @@ class KeywordQueryEventListener(EventListener):
     def on_event(self, event, extension):
         location = extension.preferences["location"]
         language = extension.preferences["language"]
+        location_id = extension.preferences["location_id"]
         items = []
         try:
             fajr_time, sunset_time, dhuhr_time, asr_time, maghrib_time, isha_time ,next_azan = \
-            get_praying_info(location, language)
+            get_praying_info(location, language, location_id)
 
             logger.info(fajr_time)
 
@@ -68,7 +69,7 @@ class KeywordQueryEventListener(EventListener):
         except Exception as e:
             items.append(ExtensionResultItem(icon="./images/exclamation.jpeg",
                                                 name="City Text ID Not Found",
-                                                description="Please check file creating_city_folders.py from github !",
+                                                description="Please check location ID on sorted_cities.txt file from github !",
                                                 on_enter=HideWindowAction()))
 
         return RenderResultListAction(items)
