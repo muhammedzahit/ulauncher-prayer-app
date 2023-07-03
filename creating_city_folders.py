@@ -17,4 +17,4 @@ def create_city_folders():
 
             line = f.readline()
 
-# create_city_folders()
+create_city_folders()
