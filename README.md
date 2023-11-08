@@ -19,6 +19,7 @@ Actually Presendency of Religious Affairs of Turkey's has official API for getti
 - PIP Requirements:
     - [bs4](https://pypi.org/project/beautifulsoup4/)
     - [retrying](https://pypi.org/project/retrying/)
+    - [requests](https://pypi.org/project/requests/)
 
 ## Install
 
