@@ -23,6 +23,18 @@ Actually Presendency of Religious Affairs of Turkey's has official API for getti
 
 ## Install
 
+First install PIP and check is succesfully installed
+
+```
+sudo apt install python3-pip && pip3 --version
+```
+
+Then install required packages via PIP
+
+```
+pip install beautifulsoup4 retrying requests 
+```
+
 Open ulauncher preferences window -> extensions -> add extension and paste the following url:
 
 ```
