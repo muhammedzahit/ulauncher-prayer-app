@@ -32,7 +32,7 @@ sudo apt install python3-pip && pip3 --version
 Then install required packages via PIP (If you have PEP 668 "externally managed" error click [here](#pep-668))
 
 ```
-pip install beautifulsoup4 retrying requests 
+pip3 install beautifulsoup4 retrying requests 
 ```
 
 Open ulauncher preferences window -> extensions -> add extension and paste the following url:
