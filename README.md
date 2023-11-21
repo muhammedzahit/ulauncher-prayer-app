@@ -55,14 +55,14 @@ If you dont set your location, you can look up [sorted_cities.txt](https://githu
 
 Some distros (like debian) don't trust PIP and gives you PEP 668 error. There is two solution for that error.
 
-## 1 - Blindly Trust Packages :
+#### 1 - Blindly Trust Packages :
 
 This is not a recommened way to go. If you certain that this packages safe you can use this method. Add `--break-system-packages` at the end of pip command.
 ```
 pip3 install beautifulsoup4 retrying requests  --break-system-packages
 ```
 
-## 2 - Create a virtual enviroment :
+#### 2 - Create a virtual enviroment :
 
 You can create a virtual enviroment and use this enviroment for your system. This is the way recommend but tedious.
 
