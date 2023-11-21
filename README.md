@@ -91,3 +91,7 @@ source .bashrc
 2.5 We changed default python path to virtual enviroment path. If you want to go back to original python just delete aliases from .bashrc and update system settings. 
 
 2.6 Try pip command it will work
+
+```
+pip3 install beautifulsoup4 retrying requests 
+```
