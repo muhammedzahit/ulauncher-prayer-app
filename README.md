@@ -29,7 +29,7 @@ First install PIP and check is succesfully installed
 sudo apt install python3-pip && pip3 --version
 ```
 
-Then install required packages via PIP
+Then install required packages via PIP (If you have PEP 668 "externally managed" error click [here](#pep-668))
 
 ```
 pip install beautifulsoup4 retrying requests 
@@ -48,3 +48,46 @@ If you dont set your location, you can look up [sorted_cities.txt](https://githu
 ## Usage
 
 - Open ulauncher and type `prayer` or keyword that you set.
+
+## Errors
+
+### PEP 668
+
+Some distros (like debian) don't trust PIP and gives you PEP 668 error. There is two solution for that error.
+
+## 1 - Blindly Trust Packages :
+
+This is not a recommened way to go. If you certain that this packages safe you can use this method. Add `--break-system-packages` at the end of pip command.
+```
+pip3 install beautifulsoup4 retrying requests  --break-system-packages
+```
+
+## 2 - Create a virtual enviroment :
+
+You can create a virtual enviroment and use this enviroment for your system. This is the way recommend but tedious.
+
+2.1 - First create [virtual enviroment](https://docs.python.org/3/library/venv.html). 
+```
+sudo apt install python3-venv
+cd && python3 -m venv .venv
+```
+
+2.2 - Since ULauncher always use default python path we must change it. Easiest way to change python3 path is creating [alias](https://www.baeldung.com/linux/create-alias).
+```
+cd  && nano .bashrc
+```
+
+2.3 Add to end of the file python3 and pip3 aliases
+```
+alias python3='~/.venv/bin/python3'
+alias pip3='~/.venv/bin/pip3'
+```
+
+2.4 Exit with `Ctrl+X` and say `Y` for saving file question. Update system settings.
+```
+source .bashrc
+```
+
+2.5 We changed default python path to virtual enviroment path. If you want to go back to original python just delete aliases from .bashrc and update system settings. 
+
+2.6 Try pip command it will work
